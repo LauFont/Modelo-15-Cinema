@@ -648,9 +648,6 @@ button {
 
 
 
-
-
-
 /* ********** Galería y Mi Historia ********** */
 
 
@@ -1027,6 +1024,11 @@ button {
   border: none;
 }
 
+.hashtag{
+  font-weight: bold;
+  color: var(--link-color);
+  font-size: 1.2em;
+}
 /* Hover en PC */
 .estilos-grid img:hover {
   transform: scale(1.1);
@@ -1160,38 +1162,28 @@ button {
 /* ********** RSVP  ********** */
 
 
+/* Toque en móviles */
+@media (hover: none) and (pointer: coarse) {
+  .estilos-grid img:active {
+    transform: scale(1.05);
+  }
+}
 
-/* Responsive para móviles */
-@media (max-width: 900px) {
-  .rsvp-location-flex {
-    flex-direction: column;
-    align-items: center;
-    gap: 2em;
+/* Responsivo para tablets y móviles */
+@media (max-width: 768px) {
+  .estilos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .estilos-grid {
+    grid-template-columns: 1fr;
   }
 
-  .rsvp,
-  .location-box {
-    max-width: 95vw;
-    min-width: 0;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
 
-  .location-buttons,
-  .rsvp .location-buttons {
-    flex-direction: column;
-    gap: 0.7em;
-    align-items: center;
-    width: 100%;
-  }
-
-  .rsvp-btn,
-  .location-btn {
-    min-width: 180px;
-    max-width: 100%;
-    width: 100%;
-    justify-content: center;
+  .estilos-grid img {
+    height: 180px;
   }
 }
 

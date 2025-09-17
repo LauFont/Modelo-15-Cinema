@@ -65,7 +65,7 @@
           data-words='["MIS QUINCE AÑOS", "UNA FIESTA MÁGICA"]'></span>
       </h1>
       <h3 id="fecha-evento">
-        <span>04 • 10 • 2025</span>
+        <span>20 • 12 • 2025</span>
       </h3>
       <div>
   </section>
@@ -166,11 +166,11 @@
             <h2 class="section-title">Confirmá tu asistencia</h2>
             <p>
               Espero que puedas acompañarme.<br>
-              ¡Confirmá tu asistencia antes del 20/09/2025!
+              ¡Confirmá tu asistencia antes del 30/11/2025!
             </p>
             <div class="location-buttons">
               <button class="rsvp-btn" onclick="abrirModal('modalConfirmar')">RSVP</button>
-              <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Fiesta+de+Umma&dates=20251004T210000Z/20251005T050000Z&details=Fiesta+de+15+Años+de+Umma&location=Ruta+Nacional+205+Km114,5,+B7240+Lobos,+Provincia+de+Buenos+Aires"
+              <a href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTZicGs4c2tpbzJpNnZranA5ZWdpbjQzMW8gbGF1cmFmb250LnN0dWRpb0Bt&tmsrc=laurafont.studio%40gmail.com"
                 class="rsvp-btn" target="_blank">Agendar</a>
             </div>
             <div class="rsvp-info">
@@ -188,6 +188,7 @@
             </p>
             <div class="location-buttons">
               <a href="https://maps.app.goo.gl/BjtBPfagdCHamfFs5" class="location-btn" target="_blank">¿Cómo llegar?</a>
+              <button class="location-btn" onclick="abrirModal('modalReserva')">Con reserva</button>
             </div>
           </div>
 
@@ -240,9 +241,9 @@
           <div class="rsvp" id="fotos">
             <img src="icons/photos.svg" alt="fotos" class="fiesta-icon">
             <h2 class="section-title">Fotos</h2>
-            <p>¡Preparate para mi fiesta!<br>Etiquetame en Instagram con mi #hashtag en tus fotos y videos.</p>
+            <p>Etiquetame en tus fotos y videos<br> de Instagram y usá el #hashtag: <br><span
+                class="hashtag">#XVSofia</span>
             <div class="location-buttons">
-              <a href="https://www.instagram.com/" class="rsvp-btn" target="_blank">#15sofia</a>
               <a href="https://www.instagram.com/" class="rsvp-btn" target="_blank">Ver Fotos</a>
             </div>
             <div class="rsvp-info">
@@ -274,10 +275,12 @@
           <img src="icons/calendar.svg" alt="icono calendario" class="icono-modal-cancion">
           <h2 class="section-title">Confirmar asistencia</h2>
 
-          <form class="modal-form-rsvp" action="https://script.google.com/macros/s/AKfycbwb8cg2JZR7gKbZiVJ5ivS96Lq9HBstcL8N9HFnW1YgveCbcy3LfbuSNMC2cexbLnS4wg/exec" method="POST"
-            target="hidden_iframe" onsubmit="enviarFormulario(); cerrarModal('modalConfirmar');">
+          <form class="modal-form-rsvp"
+            action="https://script.google.com/macros/s/AKfycbzXmPdbKa1jQKCwZ8CmJeywsCQJYBz7iPc7GmQQXroixNHvXJ9kgyt8wnrsJ-O-MIJQ5Q/exec"
+            method="POST" target="hidden_iframe" onsubmit="enviarFormulario(); cerrarModal('modalConfirmar');">
 
             <input type="text" name="NOMBRE Y APELLIDO" placeholder="Nombre y Apellido" class="input-cancion" required>
+            <input type="text" name="DNI" placeholder="Tu DNI sin puntos" class="input-cancion" required>
             <input type="tel" name="TELÉFONO" placeholder="Tu teléfono" class="input-cancion" required>
 
             <div class="modal-rsvp-group">
@@ -308,6 +311,24 @@
       </div>
       <iframe name="hidden_iframe" style="display:none;"></iframe>
 
+      <!-- Modal Reserva -->
+      <div id="modalReserva" class="modal">
+        <div class="modal-contenido modal-reserva">
+          <span class="cerrar" onclick="cerrarModal('modalReserva')">&times;</span>
+          <img src="icons/icono_combi.png" alt="Icono música" class="icono-modal-cancion">
+          <h2 class="section-title cancion-titulo">Tu reserva</h2>
+          <hr class="rsvp-line">
+          <p class="cancion-texto">Si reservaste asiento, ponemos a tu servicio el transporte.</p>
+          <p>Salimos las 20 hs. desde aquí.</p>
+          <div>
+            <a href="https://maps.app.goo.gl/MtasPzFTmRPsPaBE6" class="modal-btn-gris" target="_blank">Lugar de
+              Partida</a>
+          </div>
+          </form><br><br>
+        </div>
+      </div>
+      <iframe name="hidden_iframe" style="display:none;"></iframe>
+
       <!-- Modal Estilo -->
       <div id="modalEstilo" class="modal">
         <div class="modal-contenido">
@@ -333,8 +354,9 @@
           <h2 class="section-title cancion-titulo">Sugerir canciones</h2>
           <hr class="rsvp-line">
 
-          <form id="cancionForm" action="https://script.google.com/macros/s/AKfycbwb8cg2JZR7gKbZiVJ5ivS96Lq9HBstcL8N9HFnW1YgveCbcy3LfbuSNMC2cexbLnS4wg/exec" method="POST"
-            target="hidden_iframe" onsubmit="enviarFormulario(); cerrarModal('modalCancion');">
+          <form id="cancionForm"
+            action="https://script.google.com/macros/s/AKfycbzXmPdbKa1jQKCwZ8CmJeywsCQJYBz7iPc7GmQQXroixNHvXJ9kgyt8wnrsJ-O-MIJQ5Q/exec"
+            method="POST" target="hidden_iframe" onsubmit="enviarFormulario(); cerrarModal('modalCancion');">
 
             <p class="cancion-texto">¡Ayudame a crear la mejor playlist para mi fiesta!</p>
             <input type="text" name="CANCIÓN SUGERIDA" placeholder="Nombre de la canción" required
@@ -353,12 +375,12 @@
           <span class="cerrar" onclick="cerrarModal('modalRegalos')">&times;</span>
           <img src="icons/mail.svg" alt="Icono regalos" class="icono-modal-cancion">
           <h2 class="section-title">Datos para regalos</h2>
-          <h3>Billetera digital</h3>
+          <h3 class="hashtag">Billetera digital</h3>
           <p>Enviá el dinero desde el siguiente link:</p>
           <a href="https://www.mercadopago.com.ar/" class="modal-btn-gris" target="_blank">ENVIAR DINERO</a>
           <br><br>
           <hr>
-          <h3>Datos Bancarios</h3>
+          <h3 class="hashtag">Datos Bancarios</h3>
           <p><strong>CBU/ALIAS:</strong> juan.cumple.mp</p>
           <p><strong>N° de Cuenta:</strong> 1234-5678-9012</p>
           <p><strong>Titular:</strong> Juan Fulano</p>
